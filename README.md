@@ -29,3 +29,6 @@ In my case I'm using MYSQL, then I will use the class MysqlDataSource that imple
 DATASOURCE has a function called getConnection return object of type Connection
 
    
+<h4>Best way</h4>
+for the best way to get connection to a database you should use DataSource
+because is seport a Connection Pooling  
