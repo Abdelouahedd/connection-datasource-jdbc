@@ -1,5 +1,6 @@
 package connexionDB;
 
+
 import com.mysql.cj.jdbc.MysqlDataSource;
 
 import java.io.FileInputStream;
@@ -9,8 +10,11 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 /**
+ * @author ae
  * class return one instance
  */
+
+
 public class SingletonDataSource {
     /**
      * instance of class
@@ -44,8 +48,10 @@ public class SingletonDataSource {
      * @return Connection
      */
     public Connection getConnection() throws SQLException {
+        Long time=System.currentTimeMillis();
         Properties props=new Properties();
         MysqlDataSource mysqlDS=null;
+
         try (FileInputStream fis=new FileInputStream("config")) {
             //config file that contain a information about url,user,password of db
             props.load(fis);
@@ -56,7 +62,7 @@ public class SingletonDataSource {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(mysqlDS!=null ? "done datasource connected" : "ERROR-->");
+        System.out.println(mysqlDS!=null ? "done datasource connected "+(System.currentTimeMillis()-time) : "ERROR-->");
         return mysqlDS.getConnection();
     }
 }
