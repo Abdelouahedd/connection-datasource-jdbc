@@ -1,0 +1,10 @@
+<Context>
+    <Resource
+            name="jdbc/TEST"
+            driverClassName="com.mysql.cj.jdbc.Driver"
+            url="jdbc:derby:TEST"
+            type="javax.sql.DataSource"
+            username="root"
+            password="@@@Abdelouahed19"
+            maxActive="8"/>
+</Context>
